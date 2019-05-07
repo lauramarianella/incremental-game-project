@@ -51,8 +51,8 @@ A coin click shows a popup text at the position of the mouse with the number of 
 
 The number of coins is updated every 10ms. This depends on the assets owned and their cps value (coins generated every second).
 
-Over 1 million coins, coins should read 1.XX million  
-Over 1 billion coins, coins should read 1.XX billion
+Over 1 million coins, coins should read X.XX million (e.g. 1.75 million)  
+Over 1 billion coins, coins should read X.XX billion (e.g. 1.75 billion)
 
 The background gets updated to the gif following these rules:
 
