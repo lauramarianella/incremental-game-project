@@ -86,7 +86,7 @@ These are the following resources to implement:
 
 * name: 'Super computer'
 * cps: 1000
-* cost: 500000
+* cost: 50000
 
 - name: 'Quantum computer'
 - cps: 10000
