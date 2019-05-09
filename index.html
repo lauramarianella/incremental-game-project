@@ -6,73 +6,139 @@
   <body>
     <div class="divContainer">
 
-        <div id="idDivCoins" class="divCoins">
-            <div id="idDivCounterCoins"></div>      
+        <div class="divCoins">
+            <div>
+                <p id="idPCoinsQuantity"></p>
+                <p id="idPCoinsCurrency">Coins</p>
+            </div>      
             <a href="#" id="idBtnCoin">
                 <img src="imgs/coin.png"/>
             </a>
         </div>
 
-        <div id="idDivAssets" class="divAssets">
-            <div id="idDivAssetsMiner"></div>
-            <div id="idDivAssetsComputer"></div>
-            <div id="idDivAssetsDataCenter">DC</div>
-            <div id="idDivAssetsSuperComputer">SuperC</div>
-            <div id="idDivAssetsQuantumComputer">QC</div>
-            <div id="idDivAssetsAI">AI</div>
-            <div id="idDivAssetsMatrioshkaBrain"></div>
+        <div class="divAssetsResources">
+            <div class="divMiner">
+                <div id="idDivAssetsMiner"></div> 
+                <div class="divResources">
+                    <a href="#" id="idBtnMiner">
+                        <img src="imgs/miner.jpeg"/>
+                    </a>
+                    <div>
+                        <p>Miner</p>
+                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
+                        <p style="display:inline">50</p>
+                    </div>
+                    <div class="divResourcesQuantity" id="idDivQuantityMiner">10</div>
+                </div>
+            </div>
+
+            <div class="divComputer">
+                <div id="idDivAssetsComputer"></div> 
+                <div class="divResources">
+                    <a href="#" id="idBtnComputer">
+                        <img src="imgs/computer.png"/>
+                    </a>
+                    <div>
+                        <p>Computer</p>
+                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
+                        <p style="display:inline">50</p>
+                    </div>
+                    <div class="divResourcesQuantity" id="idDivQuantityComputer">10</div>
+                </div>
+            </div>
+
+            <div class="divDataCenter">
+                <div id="idDivAssetsDataCenter"></div> 
+                <div class="divResources">
+                    <a href="#" id="idBtnDataCenter">
+                        <img src="imgs/datacenter.png"/>
+                    </a>
+                    <div>
+                        <p>Data Center</p>
+                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
+                        <p style="display:inline">50</p>
+                    </div>
+                    <div class="divResourcesQuantity" id="idDivQuantityDataCenter">10</div>
+                </div>
+            </div>
+
+            <div class="divSuperComputer">
+                <div id="idDivAssetsSuperComputer"></div> 
+                <div class="divResources">
+                    <a href="#" id="idBtnSuperComputer">
+                        <img src="imgs/supercomputer.jpg"/>
+                    </a>
+                    <div>
+                        <p>Super Computer</p>
+                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
+                        <p style="display:inline">50</p>
+                    </div>
+                    <div class="divResourcesQuantity" id="idDivQuantitySuperComputer">10</div>
+                </div>
+            </div>
+
+            <div class="divQuantumComputer">
+                <div id="idDivAssetsQuantumComputer"></div> 
+                <div class="divResources">
+                    <a href="#" id="idBtnQuantumComputer">
+                        <img src="imgs/quantumcomputer.jpg"/>
+                    </a>
+                    <div>
+                        <p>Quantum Computer</p>
+                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
+                        <p style="display:inline">50</p>
+                    </div>
+                    <div class="divResourcesQuantity" id="idDivQuantityQuantumComputer">10</div>
+                </div>
+            </div>
+
+            <div class="divAI">
+                <div id="idDivAssetsAI"></div> 
+                <div class="divResources">
+                    <a href="#" id="idBtnAI">
+                        <img src="imgs/AI.png"/>
+                    </a>
+                    <div>
+                        <p>AI</p>
+                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
+                        <p style="display:inline">50</p>
+                    </div>
+                    <div class="divResourcesQuantity" id="idDivQuantityAI">10</div>
+                </div>
+            </div>
+
+            <div class="divMatrioshkaBrain">
+                <div id="idDivAssetsMatrioshkaBrain"></div> 
+                <div class="divResources">
+                    <a href="#" id="idBtnMatrioshkaBrain">
+                        <img src="imgs/matrioshka.jpg"/>
+                    </a>
+                    <div>
+                        <p>Matrioshka Brain</p>
+                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
+                        <p style="display:inline">50</p>
+                    </div>
+                    <div class="divResourcesQuantity" id="idDivQuantityMatrioshkaBrain">10</div>
+                </div>
+            </div>
+
+            <div class="divSimulation">
+                <div id="idDivAssetsSimulation"></div> 
+                <div class="divResources">
+                    <a href="#" id="idBtnSimulation">
+                        <img src="imgs/simulation.jpg"/>
+                    </a>
+                    <div>
+                        <p>Simulation</p>
+                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
+                        <p style="display:inline">50</p>
+                    </div>
+                    <div class="divResourcesQuantity" id="idDivQuantitySimulation">10</div>
+                </div>
+            </div>
+
         </div>
 
-        <div id="idDivResources" class="divResources">
-            <div>
-                <a href="#" id="idBtnMiner">
-                    <img src="imgs/miner.jpeg"/>
-                </a>
-                <p></p>
-            </div>
-            <div>
-                <a href="#" id="idBtnComputer">
-                    <img src="imgs/computer.png"/>
-                </a>
-                <p></p>
-            </div>
-            <div>
-                <a href="#" id="idBtnDataCenter">
-                    <img src="imgs/datacenter.png"/>
-                </a>
-                <p></p>
-            </div>
-            <div>
-                <a href="#" id="idBtnSuperComputer">
-                    <img src="imgs/supercomputer.jpg"/>
-                </a>
-                <p></p>
-            </div>
-            <div>
-                <a href="#" id="idBtnQuantumComputer">
-                    <img src="imgs/quantumcomputer.jpg"/>
-                </a>
-                <p></p>
-            </div>
-            <div>
-                <a href="#" id="idBtnAI">
-                    <img src="imgs/AI.png"/>
-                </a>
-                <p></p>
-            </div>
-            <div>
-                <a href="#" id="idBtnMatrioshkaBrain">
-                    <img src="imgs/matrioshka.jpg"/>
-                </a>
-                <p></p>
-            </div>
-            <div>
-                <a href="#" id="idBtnSimulation">
-                    <img src="imgs/simulation.jpg"/>
-                </a>
-                <p></p>
-            </div>
-        </div>
         
         <script src="main.js"></script>
     </div>

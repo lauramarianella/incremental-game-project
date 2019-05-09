@@ -5,44 +5,26 @@ let user={
     name        : 'HopperCat',
     clicks      : 0,
     cps         : 0,
-    arrayAssets : [],
 };
 
 let btnCoin         = document.getElementById("idBtnCoin");
-let divCounterCoins = document.getElementById("idDivCounterCoins");
+let pCoinsQuantity  = document.getElementById("idPCoinsQuantity");
+let pCoinsCurrency  = document.getElementById("idPCoinsCurrency");
+
 btnCoin.addEventListener("click", () => {
                                             audioCoin.play();
                                             user.clicks++;
                                             user.cps++;
-                                            switch (user.cps) {
-                                                case miner.cost / 2:
-                                                    miner.showResource();
-                                                    break;
-                                                case computer.cost / 2:
-                                                    computer.showResource();
-                                                    break;
-                                                case dataCenter.cost / 2:
-                                                    dataCenter.showResource();
-                                                    break;
-                                                case superComputer.cost / 2:
-                                                    superComputer.showResource();
-                                                    break;
-                                                case quantumComputer.cost / 2:
-                                                    quantumComputer.showResource();
-                                                    break;
-                                                case ai.cost / 2:
-                                                    ai.showResource();
-                                                    break;
-                                                case matrioshkaBrain.cost / 2:
-                                                    ai.showResource();
-                                                    break;
-                                                case simulation.cost / 2:
-                                                    simulation.showResource();
-                                                    break;
+                                            
+                                            if(user.clicks >= miner.cost/2)             miner.showResource();
+                                            if(user.clicks >= computer.cost/2)          computer.showResource();
+                                            if(user.clicks >= dataCenter.cost/2)        dataCenter.showResource();
+                                            if(user.clicks >= superComputer.cost/2)     superComputer.showResource();
+                                            if(user.clicks >= quantumComputer.cost/2)   quantumComputer.showResource();
+                                            if(user.clicks >= ai.cost/2)                ai.showResource();
+                                            if(user.clicks >= matrioshkaBrain.cost/2)   matrioshkaBrain.showResource();
+                                            if(user.clicks >= simulation.cost/2)        simulation.showResource();
 
-                                                default:
-                                                    break;
-                                            }
                                         });
 
 
@@ -79,7 +61,7 @@ function reset(){
 }
 
 function createResources(){
-    miner                           = new Resource("miner", 0, 1, 5, "imgs/miner.jpeg");
+    miner                           = new Resource("miner", 0, 1, 6, "imgs/miner.jpeg");
     miner.btnResources              = document.getElementById("idBtnMiner"),
     miner.divAssets                 = document.getElementById("idDivAssetsMiner"),
     miner.btnResources.addEventListener('click', ()=>{
@@ -92,12 +74,13 @@ function createResources(){
                                                             miner.divAssets.appendChild(imgAsset);
                                                             user.cps = user.cps - miner.cost;
                                                             audioBuy.play();
+                                                            miner.owned++;
                                                         }
                                                       }
                                          );
     miner.showResource              = showResource;
 
-    computer                        = new Resource("computer", 0, 2, 10, "imgs/computer.png");
+    computer                        = new Resource("computer", 0, 2, 8, "imgs/computer.png");
     computer.btnResources           = document.getElementById("idBtnComputer"),
     computer.divAssets              = document.getElementById("idDivAssetsComputer"),
     computer.btnResources.addEventListener('click', ()=>{
@@ -110,12 +93,13 @@ function createResources(){
                                                                 computer.divAssets.appendChild(imgAsset);
                                                                 user.cps = user.cps - computer.cost;
                                                                 audioBuy.play();
+                                                                computer.owned++;
                                                             }
                                                         }
                                             );
     computer.showResource           = showResource;
 
-    dataCenter                      = new Resource("dataCenter", 0, 1, 5, "imgs/datacenter.png");
+    dataCenter                      = new Resource("dataCenter", 0, 1, 10, "imgs/datacenter.png");
     dataCenter.btnResources         = document.getElementById("idBtnDataCenter"),
     dataCenter.divAssets            = document.getElementById("idDivAssetsDataCenter"),
     dataCenter.btnResources.addEventListener('click', ()=>{
@@ -128,12 +112,13 @@ function createResources(){
                                                                     dataCenter.divAssets.appendChild(imgAsset);
                                                                     user.cps = user.cps - dataCenter.cost;
                                                                     audioBuy.play();
+                                                                    dataCenter.owned++;
                                                                 }
                                                             }
                                             );
     dataCenter.showResource         = showResource;
 
-    superComputer                   = new Resource("superComputer", 0, 1, 5, "imgs/superComputer.jpg");
+    superComputer                   = new Resource("superComputer", 0, 1, 12, "imgs/superComputer.jpg");
     superComputer.btnResources      = document.getElementById("idBtnSuperComputer"),
     superComputer.divAssets         = document.getElementById("idDivAssetsSuperComputer"),
     superComputer.btnResources.addEventListener('click', ()=>{
@@ -146,12 +131,13 @@ function createResources(){
                                                                     superComputer.divAssets.appendChild(imgAsset);
                                                                     user.cps = user.cps - superComputer.cost;
                                                                     audioBuy.play();
+                                                                    superComputer.owned++;
                                                                 }
                                                             }
                                                 );
     superComputer.showResource      = showResource;
 
-    quantumComputer                 = new Resource("quantumComputer", 0, 1, 5, "imgs/quantumComputer.jpg");
+    quantumComputer                 = new Resource("quantumComputer", 0, 1, 14, "imgs/quantumComputer.jpg");
     quantumComputer.btnResources    = document.getElementById("idBtnQuantumComputer"),
     quantumComputer.divAssets       = document.getElementById("idDivAssetsQuantumComputer"),
     quantumComputer.btnResources.addEventListener('click', ()=>{
@@ -164,12 +150,13 @@ function createResources(){
                                                                         quantumComputer.divAssets.appendChild(imgAsset);
                                                                         user.cps = user.cps - quantumComputer.cost;
                                                                         audioBuy.play();
+                                                                        quantumComputer.owned++;
                                                                     }
                                                                 }
                                                  );
     quantumComputer.showResource    = showResource;
 
-    ai                              = new Resource("AI", 0, 1, 5, "imgs/AI.png");
+    ai                              = new Resource("AI", 0, 1, 16, "imgs/AI.png");
     ai.btnResources                 = document.getElementById("idBtnAI"),
     ai.divAssets                    = document.getElementById("idDivAssetsAI"),
     ai.btnResources.addEventListener('click', ()=>{
@@ -182,12 +169,13 @@ function createResources(){
                                                             ai.divAssets.appendChild(imgAsset);
                                                             user.cps = user.cps - ai.cost;
                                                             audioBuy.play();
+                                                            ai.owned++;
                                                         }
                                                     }
                                     );
     ai.showResource                 = showResource;
 
-    matrioshkaBrain                 = new Resource("matrioshkaBrain", 0, 1, 5, "imgs/matrioshka.jpg");
+    matrioshkaBrain                 = new Resource("matrioshkaBrain", 0, 1, 18, "imgs/matrioshka.jpg");
     matrioshkaBrain.btnResources    = document.getElementById("idBtnMatrioshkaBrain"),
     matrioshkaBrain.divAssets       = document.getElementById("idDivAssetsMatrioshkaBrain"),
     matrioshkaBrain.btnResources.addEventListener('click', ()=>{
@@ -200,12 +188,13 @@ function createResources(){
                                                                         matrioshkaBrain.divAssets.appendChild(imgAsset);
                                                                         user.cps = user.cps - matrioshkaBrain.cost;
                                                                         audioBuy.play();
+                                                                        matrioshkaBrain.owned++;
                                                                     }
                                                                 }
                                                   );
     matrioshkaBrain.showResource    = showResource;
 
-    simulation                      = new Resource("simulation", 0, 10, 100000000, "imgs/simulation.jpg");
+    simulation                      = new Resource("simulation", 0, 10, 20, "imgs/simulation.jpg");
     simulation.btnResources         = document.getElementById("idBtnSimulation"),
     simulation.divAssets            = document.getElementById("idDivAssetsSimulation"),
     simulation.btnResources.addEventListener('click', ()=> alert('reseting...'));
@@ -220,7 +209,7 @@ function run() {
 }
 
 function updateCounter() {
-    divCounterCoins.innerText = user.cps;
+    pCoinsQuantity.innerText = user.cps;
 }
 
 run();
