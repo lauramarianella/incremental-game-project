@@ -4,12 +4,14 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
+    <!-- <div class='divCoinsEarned' id="idDivCoinsEarned">+1 just tocheck how it looks like</div> -->
+
     <div class="divContainer">
 
-        <div class="divCoins">
+        <div class="divCoins" id="idDivCoins">
             <div>
-                <p id="idPCoinsQuantity"></p>
-                <p id="idPCoinsCurrency">Coins</p>
+                <p id="idPTotalCoinsEarned"></p>
+                <p id="idPCoinsCurrency">Coins</p>                
             </div>      
             <a href="#" id="idBtnCoin">
                 <img src="imgs/coin.png"/>
@@ -19,127 +21,130 @@
         <div class="divAssetsResources">
             <div class="divMiner">
                 <div id="idDivAssetsMiner"></div> 
-                <div class="divResources">
-                    <a href="#" id="idBtnMiner">
+                <div class="divResources" id="idDivResourceMiner">
+                    <a href="#" id="idBtnMiner" class="btnResource">
                         <img src="imgs/miner.jpeg"/>
                     </a>
                     <div>
                         <p>Miner</p>
-                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
-                        <p style="display:inline">50</p>
+                        <img src="imgs/coin.png" class="imgValue"/>
+                        <p class="pValue" id="idPCostMiner">0</p>
                     </div>
-                    <div class="divResourcesQuantity" id="idDivQuantityMiner">10</div>
+                    <div class="divResourcesQuantity" id="idDivQuantityMiner">0</div>
                 </div>
             </div>
 
             <div class="divComputer">
                 <div id="idDivAssetsComputer"></div> 
-                <div class="divResources">
-                    <a href="#" id="idBtnComputer">
+                <div class="divResources" id="idDivResourceComputer">
+                    <a href="#" id="idBtnComputer" class="btnResource">
                         <img src="imgs/computer.png"/>
                     </a>
                     <div>
                         <p>Computer</p>
-                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
-                        <p style="display:inline">50</p>
+                        <img src="imgs/coin.png" class="imgValue"/>
+                        <p class="pValue" id="idPCostComputer">0</p>
                     </div>
-                    <div class="divResourcesQuantity" id="idDivQuantityComputer">10</div>
+                    <div class="divResourcesQuantity" id="idDivQuantityComputer">0</div>
                 </div>
             </div>
 
             <div class="divDataCenter">
                 <div id="idDivAssetsDataCenter"></div> 
-                <div class="divResources">
-                    <a href="#" id="idBtnDataCenter">
+                <div class="divResources" id="idDivResourceDataCenter">
+                    <a href="#" id="idBtnDataCenter" class="btnResource">
                         <img src="imgs/datacenter.png"/>
                     </a>
                     <div>
                         <p>Data Center</p>
-                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
-                        <p style="display:inline">50</p>
+                        <img src="imgs/coin.png" class="imgValue"/>
+                        <p class="pValue" id="idPCostDataCenter">0</p>
                     </div>
-                    <div class="divResourcesQuantity" id="idDivQuantityDataCenter">10</div>
+                    <div class="divResourcesQuantity" id="idDivQuantityDataCenter">0</div>
                 </div>
             </div>
 
             <div class="divSuperComputer">
                 <div id="idDivAssetsSuperComputer"></div> 
-                <div class="divResources">
-                    <a href="#" id="idBtnSuperComputer">
+                <div class="divResources" id="idDivResourceSuperComputer">
+                    <a href="#" id="idBtnSuperComputer" class="btnResource">
                         <img src="imgs/supercomputer.jpg"/>
                     </a>
                     <div>
                         <p>Super Computer</p>
-                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
-                        <p style="display:inline">50</p>
+                        <img src="imgs/coin.png" class="imgValue"/>
+                        <p class="pValue" id="idPCostSuperComputer">0</p>
                     </div>
-                    <div class="divResourcesQuantity" id="idDivQuantitySuperComputer">10</div>
+                    <div class="divResourcesQuantity" id="idDivQuantitySuperComputer">0</div>
                 </div>
             </div>
 
             <div class="divQuantumComputer">
                 <div id="idDivAssetsQuantumComputer"></div> 
-                <div class="divResources">
-                    <a href="#" id="idBtnQuantumComputer">
+                <div class="divResources" id="idDivResourceQuantumComputer">
+                    <a href="#" id="idBtnQuantumComputer" class="btnResource">
                         <img src="imgs/quantumcomputer.jpg"/>
                     </a>
                     <div>
-                        <p>Quantum Computer</p>
-                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
-                        <p style="display:inline">50</p>
+                        <p>Quantum</p>
+                        <img src="imgs/coin.png" class="imgValue"/>
+                        <p class="pValue" id="idPCostQuantumComputer">0</p>
                     </div>
-                    <div class="divResourcesQuantity" id="idDivQuantityQuantumComputer">10</div>
+                    <div class="divResourcesQuantity" id="idDivQuantityQuantumComputer">0</div>
                 </div>
             </div>
 
             <div class="divAI">
                 <div id="idDivAssetsAI"></div> 
-                <div class="divResources">
-                    <a href="#" id="idBtnAI">
+                <div class="divResources" id="idDivResourceAI">
+                    <a href="#" id="idBtnAI" class="btnResource">
                         <img src="imgs/AI.png"/>
                     </a>
                     <div>
                         <p>AI</p>
-                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
-                        <p style="display:inline">50</p>
+                        <img src="imgs/coin.png" class="imgValue"/>
+                        <p class="pValue" id="idPCostAI">0</p>
                     </div>
-                    <div class="divResourcesQuantity" id="idDivQuantityAI">10</div>
+                    <div class="divResourcesQuantity" id="idDivQuantityAI">0</div>
                 </div>
             </div>
 
             <div class="divMatrioshkaBrain">
                 <div id="idDivAssetsMatrioshkaBrain"></div> 
-                <div class="divResources">
-                    <a href="#" id="idBtnMatrioshkaBrain">
+                <div class="divResources" id="idDivResourceMatrioshkaBrain">
+                    <a href="#" id="idBtnMatrioshkaBrain" class="btnResource">
                         <img src="imgs/matrioshka.jpg"/>
                     </a>
                     <div>
-                        <p>Matrioshka Brain</p>
-                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
-                        <p style="display:inline">50</p>
+                        <p>Matrioshka</p>
+                        <img src="imgs/coin.png" class="imgValue"/>
+                        <p class="pValue" id="idPCostMatrioshkaBrain">0</p>
                     </div>
-                    <div class="divResourcesQuantity" id="idDivQuantityMatrioshkaBrain">10</div>
+                    <div class="divResourcesQuantity" id="idDivQuantityMatrioshkaBrain">0</div>
                 </div>
             </div>
 
             <div class="divSimulation">
                 <div id="idDivAssetsSimulation"></div> 
-                <div class="divResources">
-                    <a href="#" id="idBtnSimulation">
+                <div class="divResources" id="idDivResourceSimulation">
+                    <a href="#" id="idBtnSimulation" class="btnResource">
                         <img src="imgs/simulation.jpg"/>
                     </a>
                     <div>
                         <p>Simulation</p>
-                        <img src="imgs/coin.png" width="10px" height="10px" style="display:inline"/>
-                        <p style="display:inline">50</p>
+                        <img src="imgs/coin.png" class="imgValue"/>
+                        <p class="pValue" id="idPCostSimulation">0</p>
                     </div>
-                    <div class="divResourcesQuantity" id="idDivQuantitySimulation">10</div>
+                    <div class="divResourcesQuantity" id="idDivQuantitySimulation">0</div>
                 </div>
             </div>
 
         </div>
 
-        
+        <div class='divUserAchievement' id="idDivUserAchievement">
+            <a href="#" class="btnCloseButton" onclick="document.getElementById('idDivUserAchievement').style.display='none';">x</a>
+            <p id="pUserAchievement"></p>
+        </div>
         <script src="main.js"></script>
     </div>
   </body>
