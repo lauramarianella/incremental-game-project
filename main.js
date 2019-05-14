@@ -59,7 +59,7 @@ function changeBackground(imgSrc){
 }
 
 btnCoin.addEventListener("click", () => {   
-                                            audioCoin.play();
+                                            audioCoin.pause();
                                             user.clicks++;                                                                                     
                                             user.coins = user.coins + Math.max(1, user.cps);//counting the clicks
                                             user.showPopUpEarnedPoints();
@@ -73,6 +73,7 @@ btnCoin.addEventListener("click", () => {
                                             moneyRocket.isComplete();
                                             //singularity.isComplete();
                                             readyForSimulation.isComplete();
+                                            audioCoin.play();
                                         });
 
 
@@ -174,6 +175,7 @@ function createResources(){
     miner.showResourceAble          = showResourceAble;
     miner.btnResource.addEventListener('click', ()=>{
                                                         if ((user.coins - miner.cost)>=0) {
+                                                            audioBuy.pause();
                                                             if(miner.owned < 20){//max 20 images in DOM
                                                                 let imgAsset = document.createElement("img");
                                                                 imgAsset.src = miner.img;
@@ -182,12 +184,11 @@ function createResources(){
                                                                 imgAsset.style.top = "0px";                                                                
                                                                 miner.divAssets.appendChild(imgAsset);
                                                             }                                                          
-                                                            user.coins = user.coins - miner.cost;
-                                                            audioBuy.play();
-
+                                                            user.coins = user.coins - miner.cost;                                                            
                                                             miner.owned++;                                                            
                                                             miner.divQuantity.innerText = miner.owned;
-                                                            entrepreneur.isComplete();                                                                                                         
+                                                            entrepreneur.isComplete();
+                                                            audioBuy.play();                                                                                                      
                                                         }else{
                                                             miner.showResourceDisabled();
                                                         }
@@ -206,6 +207,7 @@ function createResources(){
     computer.showResourceAble       = showResourceAble;
     computer.btnResource.addEventListener('click', ()=>{
                                                             if ((user.coins - computer.cost)>=0) {
+                                                                audioBuy.pause();
                                                                 if(computer.owned < 20){//max 20 images in DOM
                                                                     let imgAsset = document.createElement("img");
                                                                     imgAsset.src = computer.img;
@@ -214,11 +216,10 @@ function createResources(){
                                                                     imgAsset.style.top = "0px";
                                                                     computer.divAssets.appendChild(imgAsset);
                                                                 }
-                                                                user.coins = user.coins - computer.cost;
-                                                                audioBuy.play();
-
+                                                                user.coins = user.coins - computer.cost;                                                            
                                                                 computer.owned++;
-                                                                computer.divQuantity.innerText = computer.owned;                                                                
+                                                                computer.divQuantity.innerText = computer.owned;
+                                                                audioBuy.play();                                                           
                                                             }else{
                                                                 computer.showResourceDisabled();
                                                             }
@@ -235,6 +236,7 @@ function createResources(){
     dataCenter.divQuantity          = document.getElementById("idDivQuantityDataCenter");
     dataCenter.btnResource.addEventListener('click', ()=>{
                                                                 if ((user.coins - dataCenter.cost)>=0) {
+                                                                    audioBuy.pause();
                                                                     if(dataCenter.owned < 20){//max 20 images in DOM
                                                                         let imgAsset = document.createElement("img");
                                                                         imgAsset.src = dataCenter.img;
@@ -243,11 +245,10 @@ function createResources(){
                                                                         imgAsset.style.top = "0px";
                                                                         dataCenter.divAssets.appendChild(imgAsset);
                                                                     }
-                                                                    user.coins = user.coins - dataCenter.cost;
-                                                                    audioBuy.play();
-
+                                                                    user.coins = user.coins - dataCenter.cost;                                                                    
                                                                     dataCenter.owned++;
                                                                     dataCenter.divQuantity.innerText = dataCenter.owned;
+                                                                    audioBuy.play();
                                                                 }else{
                                                                     dataCenter.showResourceDisabled();
                                                                 }
@@ -265,6 +266,7 @@ function createResources(){
     superComputer.divQuantity       = document.getElementById("idDivQuantitySuperComputer");
     superComputer.btnResource.addEventListener('click', ()=>{
                                                                 if ((user.coins - superComputer.cost)>=0) {
+                                                                    audioBuy.pause();
                                                                     if(superComputer.owned < 20){//max 20 images in DOM
                                                                         let imgAsset = document.createElement("img");
                                                                         imgAsset.src = superComputer.img;
@@ -273,11 +275,10 @@ function createResources(){
                                                                         imgAsset.style.top = "0px";
                                                                         superComputer.divAssets.appendChild(imgAsset);
                                                                     }
-                                                                    user.coins = user.coins - superComputer.cost;
-                                                                    audioBuy.play();
-
+                                                                    user.coins = user.coins - superComputer.cost;                                                                    
                                                                     superComputer.owned++;
                                                                     superComputer.divQuantity.innerText = superComputer.owned;
+                                                                    audioBuy.play();
                                                                 }else{
                                                                     superComputer.showResourceDisabled();
                                                                 }
@@ -295,6 +296,7 @@ function createResources(){
     quantumComputer.divQuantity     = document.getElementById("idDivQuantityQuantumComputer");
     quantumComputer.btnResource.addEventListener('click', ()=>{
                                                                     if ((user.coins - quantumComputer.cost)>=0) {
+                                                                        audioBuy.pause();
                                                                         if(quantumComputer.owned < 20){//max 20 images in DOM
                                                                             let imgAsset = document.createElement("img");
                                                                             imgAsset.src = quantumComputer.img;
@@ -304,10 +306,9 @@ function createResources(){
                                                                             quantumComputer.divAssets.appendChild(imgAsset);
                                                                         }
                                                                         user.coins = user.coins - quantumComputer.cost;
-                                                                        audioBuy.play();
-
                                                                         quantumComputer.owned++;
                                                                         quantumComputer.divQuantity.innerText = quantumComputer.owned;
+                                                                        audioBuy.play();
                                                                     }else{
                                                                         quantumComputer.showResourceDisabled();
                                                                     }
@@ -325,6 +326,7 @@ function createResources(){
     ai.divQuantity                  = document.getElementById("idDivQuantityAI");
     ai.btnResource.addEventListener('click', ()=>{      
                                                         if ((user.coins - ai.cost)>=0) {
+                                                            audioBuy.pause();
                                                             if(ai.owned < 20){//max 20 images in DOM
                                                                 let imgAsset = document.createElement("img");
                                                                 imgAsset.src = ai.img;
@@ -334,11 +336,10 @@ function createResources(){
                                                                 ai.divAssets.appendChild(imgAsset);
                                                             }
                                                             user.coins = user.coins - ai.cost;
-                                                            audioBuy.play();
-
                                                             ai.owned++;
                                                             ai.divQuantity.innerText = ai.owned;
                                                             singularity.isComplete();
+                                                            audioBuy.play();
                                                         }else{
                                                             ai.showResourceDisabled();
                                                         }
@@ -356,6 +357,7 @@ function createResources(){
     matrioshkaBrain.divQuantity     = document.getElementById("idDivQuantityMatrioshkaBrain");
     matrioshkaBrain.btnResource.addEventListener('click', ()=>{
                                                                     if ((user.coins - matrioshkaBrain.cost)>=0) {
+                                                                        audioBuy.pause();
                                                                         if(matrioshkaBrain.owned < 20){//max 20 images in DOM
                                                                             let imgAsset = document.createElement("img");
                                                                             imgAsset.src = matrioshkaBrain.img;
@@ -364,11 +366,10 @@ function createResources(){
                                                                             imgAsset.style.top = "0px";
                                                                             matrioshkaBrain.divAssets.appendChild(imgAsset);
                                                                         }
-                                                                        user.coins = user.coins - matrioshkaBrain.cost;
-                                                                        audioBuy.play();
-
+                                                                        user.coins = user.coins - matrioshkaBrain.cost;                                                                        
                                                                         matrioshkaBrain.owned++;
                                                                         matrioshkaBrain.divQuantity.innerText = matrioshkaBrain.owned;
+                                                                        audioBuy.play();
                                                                     }else{
                                                                         matrioshkaBrain.showResourceDisabled();
                                                                     }
