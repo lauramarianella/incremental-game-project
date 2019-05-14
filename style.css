@@ -20,24 +20,13 @@ body{
     margin: auto;
     line-height: 160%;
 
-    /* animation: moveOpacity 5s ease-in-out; */
+    animation: moveAndVanish 2s ease-in-out;
 }
 
-@keyframes moveOpacity{
-    from {
-        transform: translate(100, 10);
-    }
-    
-    /* 80% {
-        transform: translate(150, 150);
-    }
-
-    90% {
-        transform: translate(200, 200);
-    } */
-    
+@keyframes moveAndVanish{  
     to {
-        transform: translate(200, 10);
+        transform: translate(0, 100px);
+        opacity: 0;
     }
 }
 
@@ -84,6 +73,20 @@ body{
     height: 150px;
 }
 
+.imgBonusCoin{
+    width: 150px;
+    height: 150px;
+    animation: bonusCoinAndDisapear 10s ease-in-out;
+}
+@keyframes bonusCoinAndDisapear{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
 .divAssetsResources {/*container*/
     width: 85%;
 
@@ -111,7 +114,7 @@ body{
     grid-template-columns: auto auto 25%;
     justify-items: start;
 
-    visibility: none;
+    visibility: hidden;
     opacity: 0.5;
     border-style: outset;
     border: 4px solid black;
@@ -121,11 +124,11 @@ body{
 }
 
 .divResources:hover{
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .divResources:active{
-    box-sizing: content-box;
+    /* box-sizing: content-box; */
     transform: scale(0.8);
 }
 
@@ -159,12 +162,14 @@ body{
   /* pointer-events: none; */
   cursor: default;
 }
+
+
 .divUserAchievement{
     width : 250px;
     height : 40px;
     position : absolute;
     left:40%;
-    bottom:10px;
+    bottom:0;
     border : 1px solid goldenrod;
     padding: 0;
 
@@ -174,7 +179,9 @@ body{
     margin: auto;
     line-height: 160%;    
     color: goldenrod;
-    display: none;
+    
+    display: none;/* the animation does not work with visibility: visible; because the animation was already executed */
+    animation: slideIt 2s ease-in-out;
 }
 
 .btnCloseButton{
@@ -185,4 +192,14 @@ body{
     width: 20px;
     text-decoration: none;
     color:white;
+}
+
+@keyframes slideIt{
+    from {
+        transform: translate(0, 50px);
+    }
+    
+    to {
+        transform: translate(0, 0);
+    }
 }

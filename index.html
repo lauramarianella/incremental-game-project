@@ -4,14 +4,15 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <!-- <div class='divCoinsEarned' id="idDivCoinsEarned">+1 just tocheck how it looks like</div> -->
+    <!--<div class='divCoinsEarned' id="idDivCoinsEarned">+1 just tocheck how it looks like</div>-->
 
     <div class="divContainer">
 
         <div class="divCoins" id="idDivCoins">
             <div>
                 <p id="idPTotalCoinsEarned"></p>
-                <p id="idPCoinsCurrency">Coins</p>                
+                <p id="idPCoinsCurrency">coins</p>
+                <!-- CPS: --><p id="idPCPS" style="visibility: hidden;"></p>               
             </div>      
             <a href="#" id="idBtnCoin">
                 <img src="imgs/coin.png"/>
@@ -145,6 +146,8 @@
             <a href="#" class="btnCloseButton" onclick="document.getElementById('idDivUserAchievement').style.display='none';">x</a>
             <p id="pUserAchievement"></p>
         </div>
+
+        <img src="imgs/coin.png" class="imgBonusCoin" style="display:none;"/>
         <script src="main.js"></script>
     </div>
   </body>
