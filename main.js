@@ -60,14 +60,12 @@ function changeBackground(imgSrc){
 
 btnCoin.addEventListener("click", () => {   
                                             audioCoin.play();
-                                            user.clicks++;
-
-                                            showResources();
-
-                                            user.updateCps();                                         
+                                            user.clicks++;                                                                                     
                                             user.coins = user.coins + Math.max(1, user.cps);//counting the clicks
                                             user.showPopUpEarnedPoints();
-                                            //btnCoin.style.transform = 'scale(1)';
+                                            
+                                            showResources();
+                                            user.updateCps();
 
                                             //entrepreneur.isComplete();
                                             fromRagToRiches.isComplete();
@@ -163,10 +161,6 @@ function showResourceAble(){
     this.divResource.style.opacity = "1";
 }
 
-
-function reset(){
-    alert('reseting...');
-}
 
 function createResources(){
     miner                           = new Resource("miner", 0, 1, 50, "imgs/miner.jpeg");
@@ -506,8 +500,7 @@ function updateCounter() {
         changeBackground('imgs/fallingcoins1.gif');
     }else if(user.cps>=1000000){
         changeBackground('imgs/fallingcoins2.gif');
-    }               
-
+    }
 }
 
 function toFixed_norounding(n,p)
@@ -532,7 +525,7 @@ function clearAll(){
 }
 
 function saveLastState(){
-    localStorage.setItem('user.coins', user.coins);
+    localStorage.setItem('user.coins', user.coins);//localStorage.setItem('user',JSON.stringify(user));
     localStorage.setItem('user.clicks', user.clicks);
     localStorage.setItem('user.cps', user.cps);
 
@@ -545,13 +538,22 @@ function saveLastState(){
     localStorage.setItem('ai.owned', ai.owned);
     localStorage.setItem('matrioshkaBrain.owned', matrioshkaBrain.owned);
     localStorage.setItem('simulation.owned', simulation.owned);
+
+    //achievements
+    (entrepreneur.seen)?localStorage.setItem('entrepreneur.seen', 'true'):localStorage.setItem('entrepreneur.seen', 'false');//localStorage.setItem('entrepreneur',JSON.stringify(entrepreneur));
+    (fromRagToRiches.seen)?localStorage.setItem('fromRagToRiches.seen', 'true'):localStorage.setItem('fromRagToRiches.seen', 'false');
+    (clickMadness.seen)?localStorage.setItem('clickMadness.seen', 'true'):localStorage.setItem('clickMadness.seen', 'false');// localStorage.setItem('clickMadness',JSON.stringify(clickMadness));
+    (moneyRocket.seen)?localStorage.setItem('moneyRocket.seen', 'true'):localStorage.setItem('moneyRocket.seen', 'false');// localStorage.setItem('moneyRocket',JSON.stringify(moneyRocket));
+    (singularity.seen)?localStorage.setItem('singularity.seen', 'true'):localStorage.setItem('singularity.seen', 'false');// localStorage.setItem('singularity',JSON.stringify(singularity));
+    (readyForSimulation.seen)?localStorage.setItem('readyForSimulation.seen', 'true'):localStorage.setItem('readyForSimulation.seen', 'false');// localStorage.setItem('readyForSimulation',JSON.stringify(readyForSimulation));
 }
 function getLastState(){
     if(localStorage.getItem('user.coins') != null){
-        user.coins  = Number(localStorage.getItem('user.coins'));
+        user.coins  = Number(localStorage.getItem('user.coins'));//user = JSON.parse(localStorage.getItem('user'));
         user.clicks = Number(localStorage.getItem('user.clicks'));
         user.cps    = Number(localStorage.getItem('user.cps'));
 
+        //resources
         miner.owned = Number(localStorage.getItem('miner.owned'));
         miner.addAssets();
 
@@ -574,6 +576,14 @@ function getLastState(){
         matrioshkaBrain.addAssets();
 
         simulation.owned        = Number(localStorage.getItem('simulation.owned'));
+
+        //achievements
+        (localStorage.getItem('entrepreneur.seen') === 'false')?entrepreneur.seen=false:entrepreneur.seen=true;// entrepreneur = JSON.parse(localStorage.getItem('entrepreneur'));
+        (localStorage.getItem('fromRagToRiches.seen') === 'false')?fromRagToRiches.seen=false:fromRagToRiches.seen=true;
+        (localStorage.getItem('clickMadness.seen') === 'false')?clickMadness.seen=false:clickMadness.seen=true;// clickMadness = JSON.parse(localStorage.getItem('clickMadness'));
+        (localStorage.getItem('moneyRocket.seen') === 'false')?moneyRocket.seen=false:moneyRocket.seen=true;// moneyRocket = JSON.parse(localStorage.getItem('moneyRocket'));
+        (localStorage.getItem('singularity.seen') === 'false')?singularity.seen=false:singularity.seen=true;// singularity = JSON.parse(localStorage.getItem('singularity'));
+        (localStorage.getItem('readyForSimulation.seen') === 'false')?readyForSimulation.seen=false:readyForSimulation.seen=true;// readyForSimulation = JSON.parse(localStorage.getItem('readyForSimulation'));
     }
 }
 
@@ -627,6 +637,7 @@ function generateBonusCoins(){
 
                                                             let divCoinsEarned2 = document.createElement('div');
                                                             divCoinsEarned2.className = "divCoinsEarned";
+                                                            // divCoinsEarned2.width = "50px";
                                                             body.appendChild(divCoinsEarned2);
                                                         
                                                             divCoinsEarned2.style.top  = event.clientY + 'px';
@@ -659,7 +670,8 @@ function run() {
   showResources();
   let idIntervalIncrementalGain = setInterval( () =>{user.updateCps(); user.coins = user.coins + user.cps}, 1000);
   let idIntervalUpdateCounter   = setInterval(updateCounter, 10);//Coins counter updates automatically (every 10ms)
-  let idIntervalSave            = setInterval(saveLastState, 10000);//Save the game state every 10 seconds. Cleared when simulation is bought.
+  let idIntervalShowResources   = setInterval(showResources, 10);//Coins counter updates automatically (every 10ms)
+  let idIntervalSave            = setInterval(saveLastState, 10);//Save the game state every 10 seconds. Cleared when simulation is bought.
   let idIntervalBonus           = setInterval(generateBonusCoins,40000);//Every 40s, starts a timeout to create a bonus coin
 }
 
